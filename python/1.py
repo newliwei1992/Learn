@@ -12,3 +12,17 @@ def register():
 	temp=username+'|'+password
 	with open('login.md','a') as f:
 		f.write(temp)
+
+def login():
+	'''登陆函数'''
+	username=input("输入账号：\n")
+	password=input("输入密码：\n")
+	with open('login.md','r') as f:
+		info=f.read()
+	info=info.split('|')
+	print(info)
+	if username==info[0] and password==info[1]:
+		return True
+	else:
+		return False
+print(login())
